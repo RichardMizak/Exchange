@@ -1,13 +1,14 @@
 package sk.kosickaakademia.mizak.exchange;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
-import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
+
+import java.util.HashSet;
+import java.util.Set;
 
 public class App{
     public static void main(String[] args) {
+        Set<String> set = new HashSet<>();
+        set.add("USD");
+
 
     }
     }
