@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class CurrencyCalc {
-    private static final String[] currency= new String[]{"USD","CZK","BTC","GBP","PLN"};
+    private static final String[] currency= new String[]{"USD","CZK","GBP","PLN"};
     //----------------------------------------------------------------------------------
     public void calculate(double eur){
         if(eur<0){
@@ -30,6 +30,10 @@ public class CurrencyCalc {
     //----------------------------------------------------------------------------------
     private void print(String from, String to, double eur, double result, double rate){
         System.out.println(eur +" "+from+" -> "+result+" "+to+" (exchange rate: "+rate+" )");
+    }
+
+    public void calculate(double base_currency_eur, String[] currency) {
+
     }
 }
 
