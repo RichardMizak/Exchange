@@ -5,7 +5,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="250.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="250.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sk.kosickaakademia.mizak.exchange.App">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4e5357" height="250.0" opacity="0.35" stroke="BLACK" strokeType="INSIDE" width="500.0" />
       <Button fx:id="btn_exchange" layoutX="48.0" layoutY="75.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="187.0" text="Exchange">
