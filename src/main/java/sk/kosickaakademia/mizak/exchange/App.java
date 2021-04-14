@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import sk.kosickaakademia.mizak.exchange.database.Database;
 
 public class App extends Application{
     @Override
@@ -16,7 +17,8 @@ public class App extends Application{
     }
     public static void main(String[] args) {
         launch(args);
-   //   Database database=new Database();
+     // Database database=new Database();
+
 
     }
 
