@@ -1,6 +1,7 @@
 package sk.kosickaakademia.mizak.exchange.calc;
 
 import sk.kosickaakademia.mizak.exchange.api.Api;
+import sk.kosickaakademia.mizak.exchange.database.Database;
 
 import java.util.*;
 
@@ -34,6 +35,8 @@ public class CurrencyCalc {
             System.out.println("Input number can't be a negative value!");
             return null;
         }
+        Database mongo=new Database();
+        mongo.insertExchangeHistory(base_currency_eur,currency);
         Set<String> set=new HashSet<>();
         Collections.addAll(set, currency);
         Api apiRequest=new Api();

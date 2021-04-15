@@ -17,8 +17,8 @@ public class App extends Application{
     }
     public static void main(String[] args) {
         launch(args);
-     // Database database=new Database();
-
+      Database database=new Database();
+        database.test();
 
     }
 

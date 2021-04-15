@@ -16,14 +16,12 @@ public class Database {
     private static MongoCollection<Document> collection;
     private SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-    public <T> void insertExchangeHistory(double value, String from, String to, T result){
+    public void insertExchangeHistory(double value, String[] to){
         database=mongoClient.getDatabase("ExchangeDB");
-        collection = database.getCollection("currency");
+        collection = database.getCollection("ExchangeHistory");
         JSONObject object = new JSONObject();
         object.put("value", value);
-        object.put("from", from);
         object.put("to", to);
-        object.put("result", result);
         object.put("datetime", date.format(new Date()));
         docs = Document.parse(object.toJSONString());
         collection.insertOne(docs);
