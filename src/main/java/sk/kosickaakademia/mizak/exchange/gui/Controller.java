@@ -1,24 +1,18 @@
 package sk.kosickaakademia.mizak.exchange.gui;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import sk.kosickaakademia.mizak.exchange.calc.CurrencyCalc;
-
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
 import java.text.DecimalFormat;
 import java.util.Map;
 
 public class Controller {
     CurrencyCalc calc=new CurrencyCalc();
     private static final String[] currency= new String[]{"USD","CZK","GBP","PLN","BTC"};
-    public Button btn_exchange;
+    @FXML
     public TextField txt_eur;
     public TextField txt_usd;
     public TextField txt_czk;
