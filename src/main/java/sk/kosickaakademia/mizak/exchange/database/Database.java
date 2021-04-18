@@ -20,10 +20,10 @@ public class Database {
         database=mongoClient.getDatabase("ExchangeDB");
         collection = database.getCollection("ExchangeHistory");
         List<String> list = Arrays.asList(to.clone());
-        Document doc = new Document("date",date.toString())
+        docs=new Document("date",date.toString())
                 .append("value",value)
                 .append("rates", list);
-        collection.insertOne(doc);
+        collection.insertOne(docs);
     }
     //---------------------------------------------------------------------------------------
     public void test(){
