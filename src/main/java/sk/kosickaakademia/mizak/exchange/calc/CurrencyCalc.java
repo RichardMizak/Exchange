@@ -7,7 +7,7 @@ import java.util.*;
 
 public class CurrencyCalc {
     Database mongo=new Database();
-    private static final String[] currency= new String[]{"USD","CZK","GBP","PLN"};
+    private static final String[] currency= new String[]{"USD","CZK","GBP","PLN","BTC"};
     //----------------------------------------------------------------------------------
     public void calculate(double eur){
         if(eur<0){
@@ -42,10 +42,8 @@ public class CurrencyCalc {
         Api api=new Api();
         Map map=api.getExchange(set);
         Map<String,Double>values=new HashMap<>();
-        Iterator<Map.Entry<String,Double>>itr=map.entrySet().iterator();
-        while(itr.hasNext()){
-            Map.Entry<String, Double>entry=itr.next();
-            values.put(entry.getKey(),entry.getValue()*base_currency_eur);
+        for (Map.Entry<String, Double> entry : (Iterable<Map.Entry<String, Double>>) map.entrySet()) {
+            values.put(entry.getKey(), entry.getValue() * base_currency_eur);
         }
         return values;
     }

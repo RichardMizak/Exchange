@@ -9,13 +9,9 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-import sk.kosickaakademia.mizak.exchange.calc.CurrencyCalc;
 import sk.kosickaakademia.mizak.exchange.database.Database;
-import sk.kosickaakademia.mizak.exchange.gui.Controller;
-
 import java.io.FileInputStream;
 import java.io.InputStream;
-import java.util.Collection;
 
 public class App extends Application{
     @Override
@@ -38,7 +34,7 @@ public class App extends Application{
     public static void main(String[] args) {
         launch(args);
       Database database=new Database();
-     //   database.test();
+
 
     }
 

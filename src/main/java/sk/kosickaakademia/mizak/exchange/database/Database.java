@@ -3,13 +3,10 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 import com.mongodb.MongoClient;
-import org.json.simple.JSONObject;
-
-import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
+
 
 
 public class Database {
