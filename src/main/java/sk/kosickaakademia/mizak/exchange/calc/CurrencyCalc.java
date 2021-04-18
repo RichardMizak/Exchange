@@ -6,7 +6,6 @@ import sk.kosickaakademia.mizak.exchange.database.Database;
 import java.util.*;
 
 public class CurrencyCalc {
-    Api api=new Api();
     Database mongo=new Database();
     private static final String[] currency= new String[]{"USD","CZK","GBP","PLN"};
     //----------------------------------------------------------------------------------
@@ -17,6 +16,7 @@ public class CurrencyCalc {
         }
         Set<String> set=new HashSet<>();
         Collections.addAll(set, currency);
+        Api api=new Api();
         Map map=api.getExchange(set);
         for(String temp:currency){
             if(map.containsKey(temp)){
@@ -39,6 +39,7 @@ public class CurrencyCalc {
         mongo.insertExchangeHistory(base_currency_eur,currency);
         Set<String> set=new HashSet<>();
         Collections.addAll(set, currency);
+        Api api=new Api();
         Map map=api.getExchange(set);
         Map<String,Double>values=new HashMap<>();
         Iterator<Map.Entry<String,Double>>itr=map.entrySet().iterator();

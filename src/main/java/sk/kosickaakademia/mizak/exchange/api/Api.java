@@ -13,7 +13,7 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class Api {
-    private static final String Apikey="4db37a49c94570d2c2439e7cd1af9352";
+    private static final String Apikey="d9e277ac89a180d27ae66846733a6f64";
 
     public Map getExchange(Set<String> rate){
         if (rate==null||rate.size()==0)
@@ -22,7 +22,7 @@ public class Api {
     }
     public String reqApi() {
         try {
-            URL url = new URL("http://api.currencylayer.com/live?access_key=" + Apikey);
+            URL url = new URL("http://api.exchangeratesapi.io/v1/latest?access_key=" + Apikey);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             conn.connect();

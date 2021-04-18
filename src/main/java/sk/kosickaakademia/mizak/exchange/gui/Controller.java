@@ -24,11 +24,11 @@ public class Controller {
     public void exchange(ActionEvent actionEvent) {
         String value = txt_eur.getText();
         double valueEur=Double.parseDouble(value);
-        if(valueEur<=0){
-            txt_eur.clear();
-            label_error.setVisible(true);
-        }else {
-            label_error.setVisible(false);
+     //   if(valueEur<=0){
+     //       txt_eur.clear();
+      //      label_error.setVisible(true);
+      //  }else {
+       //     label_error.setVisible(false);
             Map results = calc.calculate(valueEur, currency);
             txt_czk.setText(convertTo2Decimal((double) results.get("CZK")));
             txt_gbp.setText(convertTo2Decimal((double) results.get("GBP")));
@@ -38,7 +38,7 @@ public class Controller {
             double base_currency_eur = Double.parseDouble(value);
             calc.calculate(base_currency_eur, currency);
         }
-    }
+  //  }
     //--------------------------------------------------------------------------
     private String convertTo2Decimal(double value){
         DecimalFormat df = new DecimalFormat("#.00");
