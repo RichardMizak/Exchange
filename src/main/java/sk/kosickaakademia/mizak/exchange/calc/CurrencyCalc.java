@@ -6,6 +6,8 @@ import sk.kosickaakademia.mizak.exchange.database.Database;
 import java.util.*;
 
 public class CurrencyCalc {
+    Api api=new Api();
+    Database mongo=new Database();
     private static final String[] currency= new String[]{"USD","CZK","GBP","PLN"};
     //----------------------------------------------------------------------------------
     public void calculate(double eur){
@@ -15,8 +17,7 @@ public class CurrencyCalc {
         }
         Set<String> set=new HashSet<>();
         Collections.addAll(set, currency);
-        Api apiRequest=new Api();
-        Map map=apiRequest.getExchange(set);
+        Map map=api.getExchange(set);
         for(String temp:currency){
             if(map.containsKey(temp)){
                 double value=(double)map.get(temp);
@@ -35,19 +36,16 @@ public class CurrencyCalc {
             System.out.println("Input number can't be a negative value!");
             return null;
         }
-        Database mongo=new Database();
         mongo.insertExchangeHistory(base_currency_eur,currency);
         Set<String> set=new HashSet<>();
         Collections.addAll(set, currency);
-        Api apiRequest=new Api();
-        Map map=apiRequest.getExchange(set);
-        Map<String,Double> values=new HashMap<>();
-        Iterator<Map.Entry<String,Double>> itr=map.entrySet().iterator();
+        Map map=api.getExchange(set);
+        Map<String,Double>values=new HashMap<>();
+        Iterator<Map.Entry<String,Double>>itr=map.entrySet().iterator();
         while(itr.hasNext()){
-            Map.Entry<String, Double> entry = itr.next();
+            Map.Entry<String, Double>entry=itr.next();
             values.put(entry.getKey(),entry.getValue()*base_currency_eur);
         }
-
         return values;
     }
 }

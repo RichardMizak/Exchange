@@ -10,7 +10,7 @@ import java.text.DecimalFormat;
 import java.util.Map;
 
 public class Controller {
-    private static final String[] currency= new String[]{"USD","CZK","GBP","PLN"};
+    private static final String[] currency= new String[]{"USD","CZK","GBP","PLN","BTC"};
     private Button btn_exchange;
     private TextField txt_eur;
     private ListView classic;
@@ -34,6 +34,7 @@ public class Controller {
         double base_currency_eur=Double.parseDouble(value);
         calc.calculate(base_currency_eur,currency);
     }
+
     private String convertTo2Decimal(double value){
         DecimalFormat df = new DecimalFormat("#.00");
         String angleFormated = df.format(value);
