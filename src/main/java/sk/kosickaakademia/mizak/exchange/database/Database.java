@@ -15,7 +15,7 @@ public class Database {
     private static Document docs;
     private static MongoCollection<Document> collection;
     private SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
+//---------------------------------------------------------------------------------------
     public void insertExchangeHistory(double value, String[] to){
         database=mongoClient.getDatabase("ExchangeDB");
         collection = database.getCollection("ExchangeHistory");
@@ -26,10 +26,12 @@ public class Database {
         docs = Document.parse(object.toJSONString());
         collection.insertOne(docs);
     }
+    //---------------------------------------------------------------------------------------
     public void test(){
         database=mongoClient.getDatabase("testDB");
         collection = database.getCollection("test");
-        docs=new Document("name","riso").append("ages",new Document("age","2"));
+        docs=new Document("name","riso")
+                .append("ages","2");
         collection.insertOne(docs);
     }
 }

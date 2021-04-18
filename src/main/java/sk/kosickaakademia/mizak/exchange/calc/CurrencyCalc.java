@@ -30,7 +30,7 @@ public class CurrencyCalc {
     private void print(String from, String to, double eur, double result, double rate){
         System.out.println(eur +" "+from+" -> "+result+" "+to+" (exchange rate: "+rate+" )");
     }
-
+    //-----------------------------------------------------------------------------------
     public Map<String, Double> calculate(double base_currency_eur, String[] currency) {
         if(base_currency_eur<0){
             System.out.println("Input number can't be a negative value!");
